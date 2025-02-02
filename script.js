@@ -3,7 +3,8 @@ import calculateTimeUnits from './utils/calculateTimeUnits.js';
 const DisplayModes = {
     DAYS: 0,
     WEEKS: 1,
-    MONTHS: 2
+    MONTHS: 2,
+    YEARS: 3
 };
 
 let displayModeIndex = DisplayModes.DAYS;
@@ -24,6 +25,7 @@ function updateTimer() {
     document.getElementById("seconds-container").style.display = displayModeIndex === DisplayModes.DAYS ? 'flex' : 'none';
     document.getElementById("weeks-container").style.display = displayModeIndex === DisplayModes.WEEKS ? 'flex' : 'none';
     document.getElementById("months-container").style.display = displayModeIndex === DisplayModes.MONTHS ? 'flex' : 'none';
+    document.getElementById("years-container").style.display = displayModeIndex === DisplayModes.YEARS ? 'flex' : 'none';
 
     // Only show colons when displaying days.
     const colons = document.querySelectorAll('.colon');
@@ -40,9 +42,10 @@ function updateTimer() {
         document.getElementById("weeks").textContent = timeUnits.weeks.toFixed(8);
     } else if (displayModeIndex === DisplayModes.MONTHS) {
         document.getElementById("months").textContent = timeUnits.months.toFixed(8);
+    } else if (displayModeIndex === DisplayModes.YEARS) {
+        document.getElementById("years").textContent = timeUnits.years.toFixed(12);
     }
 }
-
 
 function handleSwipe() {
     if (touchEndX < touchStartX) {
@@ -55,12 +58,12 @@ function handleSwipe() {
 
 timerElement.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
+}, {passive: true});
 
 timerElement.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
-}, { passive: true });
+}, {passive: true});
 
 setInterval(updateTimer, updateInterval_ms);
 updateTimer();
