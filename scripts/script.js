@@ -1,4 +1,4 @@
-import calculateTimeUnits from './utils/calculateTimeUnits.js';
+import calculateTimeUnits from '../utils/calculateTimeUnits.js';
 
 const DisplayModes = {
     DAYS: 0,
