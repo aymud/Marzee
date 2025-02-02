@@ -1,22 +1,27 @@
 export default function calculateTimeUnits({startDateTime_UTC, currentDateTime_utc}) {
-    const timeDiffInMs = currentDateTime_utc - startDateTime_UTC.getTime();
+    const startDate = new Date(startDateTime_UTC);
+    const currentDate = new Date(currentDateTime_utc)
+    const timeDiffInMilliseconds = currentDate - startDate;
+
     const avgLengthOfYearInDays = 365.2425;
-    const milliSecondsInSecond = 1000;
-    const milliSecondsInMinute = 1000 * 60;
-    const milliSecondsInHour = 1000 * 60 * 60;
-    const milliSecondsInDay = 1000 * 60 * 60 * 24;
-    const milliSecondsInWeek = milliSecondsInDay * 7;
-    const milliSecondsInYear = 1000 * 60 * 60 * 24 * avgLengthOfYearInDays;
-    const milliSecondsInMonth = milliSecondsInYear / 12;
+    const avgLengthOfMonthInDays = avgLengthOfYearInDays / 12;
 
-    const years = Math.floor(timeDiffInMs / milliSecondsInYear);
-    const months = timeDiffInMs / milliSecondsInMonth;
-    const weeks = timeDiffInMs / milliSecondsInWeek;
-    const days = Math.floor(timeDiffInMs / milliSecondsInDay) % avgLengthOfYearInDays;
-    const hours = Math.floor((timeDiffInMs % milliSecondsInDay) / milliSecondsInHour);
-    const minutes = Math.floor((timeDiffInMs % milliSecondsInHour) / milliSecondsInMinute);
-    const seconds = Math.floor((timeDiffInMs % milliSecondsInMinute) / milliSecondsInSecond);
-    const milliseconds = timeDiffInMs % milliSecondsInSecond;
 
-    return {years, months, weeks, days, hours, minutes, seconds, milliseconds};
+    const diffInSeconds = timeDiffInMilliseconds / 1000;
+    const diffInMinutes = diffInSeconds / 60;
+    const diffInHours = diffInMinutes / 60;
+    const diffInDays = diffInHours / 24;
+    const diffInWeeks = diffInDays / 7;
+    const diffInMonths = diffInDays / avgLengthOfMonthInDays;
+    const diffInYears = diffInDays / avgLengthOfYearInDays;
+
+    return {
+        days: Math.floor(diffInDays),
+        hours: Math.floor(diffInHours % 24),
+        minutes: Math.floor(diffInMinutes % 60),
+        seconds: Math.floor(diffInSeconds % 60),
+        weeks: diffInWeeks,
+        months: diffInMonths,
+        years: diffInYears
+    };
 }
