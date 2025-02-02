@@ -11,7 +11,8 @@ body {
     align-items: center;
     height: 100vh;
     color: #333;
-    background: linear-gradient(to bottom, #4e2a84, #2e1b5f);
+    background-color: #7a7adb;
+    background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
 }
 
 .container {
