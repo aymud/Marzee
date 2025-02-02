@@ -43,7 +43,7 @@ function updateTimer() {
     } else if (displayModeIndex === DisplayModes.MONTHS) {
         document.getElementById("months").textContent = timeUnits.months.toFixed(8);
     } else if (displayModeIndex === DisplayModes.YEARS) {
-        document.getElementById("years").textContent = timeUnits.years.toFixed(12);
+        document.getElementById("years").textContent = timeUnits.years.toFixed(8);
     }
 }
 
