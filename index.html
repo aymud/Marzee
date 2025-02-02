@@ -15,24 +15,32 @@
     </div>
 
     <div class="timer">
-        <div class="label-container">
+        <div class="label-container" id="days-container">
             <span class="time-number" id="days">0</span>
             <span class="time-label">Days</span>
         </div>
-        <span class="colon">:</span>
-        <div class="label-container">
+        <span class="colon" id="colon-hours">:</span>
+        <div class="label-container" id="hours-container">
             <span class="time-number" id="hours">0</span>
             <span class="time-label">Hours</span>
         </div>
-        <span class="colon">:</span>
-        <div class="label-container">
+        <span class="colon" id="colon-minutes">:</span>
+        <div class="label-container" id="minutes-container">
             <span class="time-number" id="minutes">0</span>
             <span class="time-label">Minutes</span>
         </div>
-        <span class="colon">:</span>
-        <div class="label-container">
+        <span class="colon" id="colon-seconds">:</span>
+        <div class="label-container" id="seconds-container">
             <span class="time-number" id="seconds">0</span>
             <span class="time-label">Seconds</span>
+        </div>
+        <div class="label-container" id="weeks-container" style="display: none;">
+            <span class="time-number" id="weeks">0</span>
+            <span class="time-label">Weeks</span>
+        </div>
+        <div class="label-container" id="months-container" style="display: none;">
+            <span class="time-number" id="months">0</span>
+            <span class="time-label">Months</span>
         </div>
     </div>
 
@@ -41,6 +49,6 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
