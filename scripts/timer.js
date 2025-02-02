@@ -38,6 +38,16 @@ function updateTimer() {
         document.getElementById("hours").textContent = timeUnits.hours.toString();
         document.getElementById("minutes").textContent = timeUnits.minutes.toString();
         document.getElementById("seconds").textContent = timeUnits.seconds.toString();
+
+        const hourLabel = document.querySelector("#hours-container .time-label");
+        hourLabel.textContent = timeUnits.hours === 1 ? "Hour" : "Hours";
+
+        const minuteLabel = document.querySelector("#minutes-container .time-label");
+        minuteLabel.textContent = timeUnits.minutes === 1 ? "Minute" : "Minutes";
+
+        const secondLabel = document.querySelector("#seconds-container .time-label");
+        secondLabel.textContent = timeUnits.seconds === 1 ? "Second" : "Seconds";
+
     } else if (displayModeIndex === DisplayModes.WEEKS) {
         document.getElementById("weeks").textContent = timeUnits.weeks.toFixed(8);
     } else if (displayModeIndex === DisplayModes.MONTHS) {
