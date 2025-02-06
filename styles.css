@@ -39,7 +39,7 @@ body {
 .timer {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 6px;
     flex-wrap: nowrap;
     background-color: #f8f8f8;
     padding: 10px;
@@ -49,7 +49,7 @@ body {
 }
 
 .time-number {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #4CAF50;
     width: auto;
@@ -57,7 +57,7 @@ body {
 }
 
 .colon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #4CAF50;
     margin: -3px 5px;
@@ -82,6 +82,7 @@ body {
 .time-label {
     font-size: 0.8rem;
     color: #777;
+    min-width: 50px;
 }
 
 .message {
@@ -117,15 +118,8 @@ body {
         padding: 12px;
     }
 
-    .time-number {
-        font-size: 2rem;
-    }
-
-    .colon {
-        font-size: 2rem;
-    }
-
     .time-label {
         font-size: 0.9rem;
+        min-width: 55px;
     }
 }
