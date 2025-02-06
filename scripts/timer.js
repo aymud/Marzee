@@ -34,10 +34,10 @@ function updateTimer() {
     });
 
     if (displayModeIndex === DisplayModes.DAYS) {
-        document.getElementById("days").textContent = timeUnits.days.toString();
-        document.getElementById("hours").textContent = timeUnits.hours.toString();
-        document.getElementById("minutes").textContent = timeUnits.minutes.toString();
-        document.getElementById("seconds").textContent = timeUnits.seconds.toString();
+        document.getElementById("days").textContent = timeUnits.days.toLocaleString();
+        document.getElementById("hours").textContent = timeUnits.hours.toLocaleString();
+        document.getElementById("minutes").textContent = timeUnits.minutes.toLocaleString();
+        document.getElementById("seconds").textContent = timeUnits.seconds.toLocaleString();
 
         const hourLabel = document.querySelector("#hours-container .time-label");
         hourLabel.textContent = timeUnits.hours === 1 ? "Hour" : "Hours";
@@ -49,11 +49,11 @@ function updateTimer() {
         secondLabel.textContent = timeUnits.seconds === 1 ? "Second" : "Seconds";
 
     } else if (displayModeIndex === DisplayModes.WEEKS) {
-        document.getElementById("weeks").textContent = timeUnits.weeks.toFixed(8);
+        document.getElementById("weeks").textContent = timeUnits.weeks.toFixed(8).toLocaleString();
     } else if (displayModeIndex === DisplayModes.MONTHS) {
-        document.getElementById("months").textContent = timeUnits.months.toFixed(8);
+        document.getElementById("months").textContent = timeUnits.months.toFixed(8).toLocaleString();
     } else if (displayModeIndex === DisplayModes.YEARS) {
-        document.getElementById("years").textContent = timeUnits.years.toFixed(8);
+        document.getElementById("years").textContent = timeUnits.years.toFixed(8).toLocaleString();
     }
 }
 
