@@ -10,13 +10,13 @@ const DisplayModes = {
 let displayModeIndex = DisplayModes.DAYS;
 const displayModesLength = Object.keys(DisplayModes).length;
 const timerElement = document.querySelector('.timer');
-const startDateTime_UTC = new Date("2024-10-13T18:34:15Z");
+const startDateTime_utc = new Date("2024-10-13T18:34:15Z");
 const updateInterval_ms = 1;
 let touchStartX = 0;
 let touchEndX = 0;
 
 function updateTimer() {
-    const args = {startDateTime_UTC, currentDateTime_utc: Date.now()};
+    const args = {startDateTime_utc, currentDateTime_utc: Date.now()};
     const timeUnits = calculateTimeUnits(args);
 
     document.getElementById("days-container").style.display = displayModeIndex === DisplayModes.DAYS ? 'flex' : 'none';

@@ -1,11 +1,10 @@
-export default function calculateTimeUnits({startDateTime_UTC, currentDateTime_utc}) {
-    const startDate = new Date(startDateTime_UTC);
+export default function calculateTimeUnits({startDateTime_utc, currentDateTime_utc}) {
+    const startDate = new Date(startDateTime_utc);
     const currentDate = new Date(currentDateTime_utc)
     const timeDiffInMilliseconds = currentDate - startDate;
 
     const avgLengthOfYearInDays = 365.2425;
     const avgLengthOfMonthInDays = avgLengthOfYearInDays / 12;
-
 
     const diffInSeconds = timeDiffInMilliseconds / 1000;
     const diffInMinutes = diffInSeconds / 60;
