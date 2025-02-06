@@ -35,9 +35,9 @@ function updateTimer() {
 
     if (displayModeIndex === DisplayModes.DAYS) {
         document.getElementById("days").textContent = timeUnits.days.toLocaleString();
-        document.getElementById("hours").textContent = timeUnits.hours.toLocaleString();
-        document.getElementById("minutes").textContent = timeUnits.minutes.toLocaleString();
-        document.getElementById("seconds").textContent = timeUnits.seconds.toLocaleString();
+        document.getElementById("hours").textContent = timeUnits.hours.toString()
+        document.getElementById("minutes").textContent = timeUnits.minutes.toString();
+        document.getElementById("seconds").textContent = timeUnits.seconds.toString();
 
         const hourLabel = document.querySelector("#hours-container .time-label");
         hourLabel.textContent = timeUnits.hours === 1 ? "Hour" : "Hours";
@@ -53,7 +53,7 @@ function updateTimer() {
     } else if (displayModeIndex === DisplayModes.MONTHS) {
         document.getElementById("months").textContent = timeUnits.months.toFixed(8).toLocaleString();
     } else if (displayModeIndex === DisplayModes.YEARS) {
-        document.getElementById("years").textContent = timeUnits.years.toFixed(8).toLocaleString();
+        document.getElementById("years").textContent = timeUnits.years.toFixed(8);
     }
 }
 

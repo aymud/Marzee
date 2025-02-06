@@ -116,10 +116,11 @@ body {
 
     .timer {
         padding: 12px;
+        gap: 5px;
     }
 
     .time-label {
         font-size: 0.9rem;
-        min-width: 55px;
+        min-width: 60px;
     }
 }
