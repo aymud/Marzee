@@ -65,7 +65,7 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: #4CAF50;
-    margin: -3px 5px;
+    margin: -3px 3px;
 }
 
 .labels {
@@ -110,7 +110,7 @@ body {
 
     .container {
         padding: 20px;
-        width: 100%;
+        width: 85%;
     }
 
     .photo {
@@ -120,12 +120,12 @@ body {
     }
 
     .timer {
-        padding: 12px;
-        gap: 5px;
+        padding: 10px;
+        gap: 0;
     }
 
     .time-label {
         font-size: 0.9rem;
-        min-width: 60px;
+        min-width: 65px;
     }
 }
