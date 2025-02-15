@@ -110,7 +110,7 @@ body {
 
     .container {
         padding: 20px;
-        width: 85%;
+        width: 90%;
     }
 
     .photo {
@@ -126,6 +126,6 @@ body {
 
     .time-label {
         font-size: 0.9rem;
-        min-width: 65px;
+        min-width: 60px;
     }
 }
